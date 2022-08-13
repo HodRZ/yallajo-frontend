@@ -8,8 +8,12 @@ import axios from 'axios';
 
 class App extends React.Component {
 
+function App() {
+  return (
+    <>
 
-	
+    </>
+  );
 }
 
 export default App;
