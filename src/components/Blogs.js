@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import {
     MDBCard,
     MDBCardBody,
@@ -7,7 +8,8 @@ import {
     MDBCardImage,
     MDBBtn
 } from 'mdb-react-ui-kit';
-//rcc 
+
+
 class Blogs extends Component {
     constructor(props) {
         super(props)
@@ -16,7 +18,7 @@ class Blogs extends Component {
         }
     }
     getData = async () => {
-        const blogData = await axios.get(`${process.env.REACT_APP_PORT || 'http://localhost:3001'} ` / blog).catch(function (err) { console.log(err) })
+        const blogData = await axios.get(`${process.env.REACT_APP_PORT || 'http://localhost:3001'}/blog`).catch(function (err) { console.log(err) })
         this.setState({
             blogData: blogData.data
         })
@@ -34,11 +36,11 @@ class Blogs extends Component {
                     this.state.blogData.map((article) => {
                         return (
                             <MDBCard>
-                                <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/184.webp' position='top' alt='...' />
+                                <MDBCardImage src={article.image} position='top' alt={article.keyword} />
                                 <MDBCardBody>
-                                    <MDBCardTitle>this is title</MDBCardTitle>
+                                    <MDBCardTitle>{article.title}</MDBCardTitle>
                                     <MDBCardText>
-                                        this is text
+                                        {article.content}
                                     </MDBCardText>
                                     <MDBBtn href='#'>Button</MDBBtn>
                                 </MDBCardBody>
