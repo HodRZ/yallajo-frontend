@@ -1,6 +1,7 @@
-import './App.css';
-import React from 'react'
+import "./App.css";
+import React from "react";
 // import axios from 'axios';
+<<<<<<< HEAD
 import Blogs from './components/Blogs'
 import Citycomponent from './components/LandingPage/LoggedIN/mainComponents/Citycomponent';
 // import AuthButtons from './components/user/AuthButtons';
@@ -11,14 +12,15 @@ import { useAuth0 } from '@auth0/auth0-react';
 // import Profile from './components/user/Profile';
 // import Test from './components/test';
 // import LoginButton from './components/user/LoginButton';
-
-
-
+=======
+import Citycomponent from './components/Citycomponent';
+>>>>>>> origin/UI
 
 function App() {
   const { isAuthenticated } = useAuth0()
   return (
     <>
+<<<<<<< HEAD
       {!isAuthenticated &&
         <MainLoggedOut />}
       {isAuthenticated &&
@@ -26,12 +28,11 @@ function App() {
       {/* <Test /> */}
       {/* <Profile /> */}
       <Blogs />
+=======
+    <Citycomponent />
+>>>>>>> origin/UI
     </>
   );
 }
 
 export default App;
-
-
-
-
