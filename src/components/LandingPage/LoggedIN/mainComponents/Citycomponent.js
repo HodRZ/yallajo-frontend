@@ -5,6 +5,11 @@ import DisplayedInfo from './DisplayedInfo';
 import Unsplashimg from './Unsplashimg';
 import { Component } from 'react';
 import axios from 'axios';
+import Header from '../../loggedOut/Header';
+import LogoutButton from '../../../user/LogoutButton';
+import { MDBCol, MDBContainer, MDBRow } from 'mdb-react-ui-kit';
+import Profile from './../../../user/Profile';
+
 
 
 
@@ -51,17 +56,36 @@ class Citycomponent extends Component {
 	render() {
 		return (
 			<>
-				<SearchForm display={this.displayLocation} />
-				{this.state.showData &&
-					<>
-						<DisplayedInfo name={this.state.cityName} />
-						<Map className='pic' source={this.state.imgSrc} />
-						<Unsplashimg className='img' sourceimg={this.state.imgSrcUns} />
-					</>}
-				{this.state.showWeather && <Weather weatherData={this.state.weather} />}
+				<Header />
+				<div
+					className='p-5 text-center bg-image d-flex align-items-center'
+					style={{ backgroundColor: 'orange', height: '400px' }}
+				>
+					<MDBContainer >
+						<MDBRow>
+							<MDBCol md='7'>
+								<SearchForm display={this.displayLocation} />
+							</MDBCol>
+							<MDBCol md='3'>
+								<Profile />
+							</MDBCol>
+							<MDBCol md='2'>
+								<LogoutButton />
+							</MDBCol>
+						</MDBRow>
+					</MDBContainer>
+					{this.state.showData &&
+						<>
+							<DisplayedInfo name={this.state.cityName} />
+							<Map className='pic' source={this.state.imgSrc} />
+							<Unsplashimg className='img' sourceimg={this.state.imgSrcUns} />
+						</>}
+					{this.state.showWeather && <Weather weatherData={this.state.weather} />}
 
-				{this.state.showErr && <p>Enter valid Value Please</p>}
+					{this.state.showErr && <p>Enter valid Value Please</p>}
+				</div>
 			</>
+
 		)
 	}
 } export default Citycomponent;

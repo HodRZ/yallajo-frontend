@@ -30,8 +30,6 @@ class Blogs extends Component {
     render() {
         return (
             <>
-
-
                 {this.state.blogData &&
                     this.state.blogData.map((article) => {
                         return (
