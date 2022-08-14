@@ -14,7 +14,7 @@ export class Services extends Component {
 
 
 
-	handleSubmit = (e) => {
+	handleSubmit = async(e) => {
 		e.preventDefault();
 		const title = e.target.title.value;
 		const type = e.target.type1.value;
