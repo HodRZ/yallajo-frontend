@@ -3,10 +3,9 @@ import React from 'react';
 class Unsplashimg extends React.Component {
   render() {
     return (
-      <div className='imgDad'>
-        <img className='img' src={this.props.sourceimg} alt="Khawa" />
-        <hr></hr>
-      </div>
+
+      <img className='img-fluid shadow-4' src={this.props.sourceimg} alt="...." />
+
     )
   }
 }

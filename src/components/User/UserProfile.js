@@ -12,19 +12,19 @@ import {
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.state({
+    this.state = {
       profileData: {},
-    });
+    };
   }
 
   getData = async () => {
-    const profileData = await axios
-      .get(`${process.env.REACT_APP_PORT || "http://localhost:3001"}/profile`)
+    const responseData = await axios
+      .get(`${(process.env.REACT_APP_PORT && "http://localhost:3001") ? process.env.REACT_APP_PORT : "http://localhost:3001"}/user/`) //params to be extracted and added here
       .catch(function (err) {
         console.log(err);
       });
     this.setState({
-      profileData: profileData.data,
+      profileData: responseData.data,
     });
   };
   componentDidMount() {
@@ -34,34 +34,33 @@ class UserProfile extends React.Component {
     return (
       <>
         {this.state.profileData &&
-          this.state.profileData.map((profile) => {
-            return (
-              <MDBCard>
-                <MDBRipple
-                  rippleColor="light"
-                  rippleTag="div"
-                  className="bg-image hover-overlay"
-                >
-                  <MDBCardImage src={profile.img} fluid alt="..." />
-                  <a>
-                    <div
-                      className="mask"
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                    ></div>
-                  </a>
-                </MDBRipple>
-                <MDBCardBody>
-                  <MDBCardTitle>{profile.name}</MDBCardTitle>
-                  {/* <MDBCardText>
+
+          <MDBCard>
+            <MDBRipple
+              rippleColor="light"
+              rippleTag="div"
+              className="bg-image hover-overlay"
+            >
+              <MDBCardImage src={this.state.profileData.image} fluid alt="..." />
+              <a href='/'>
+                <div
+                  className="mask"
+                  style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+                ></div>
+              </a>
+            </MDBRipple>
+            <MDBCardBody>
+              <MDBCardTitle>{this.state.profileData.name}</MDBCardTitle>
+              {/* <MDBCardText>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </MDBCardText> */}
-                  <MDBBtn href="#">Add Service</MDBBtn>
-                  <MDBBtn href="#">Add Artical</MDBBtn>
-                </MDBCardBody>
-              </MDBCard>
-            );
-          })}
+              <MDBBtn href="#">Add Service</MDBBtn>
+              <MDBBtn href="#">Add Artical</MDBBtn>
+            </MDBCardBody>
+          </MDBCard>
+
+        }
       </>
     );
   }

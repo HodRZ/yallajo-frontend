@@ -18,7 +18,7 @@ export default function Header() {
         <header>
             <div
                 className='p-5 text-center bg-image'
-                style={{ backgroundImage: "url('https://mdbootstrap.com/img/new/slides/041.webp')", height: '400px' }}
+                style={{ backgroundImage: "url('https://universes.art/fileadmin/_migrated/gridelement_uploads/00-1-IMG_0972-2000-750-2_01.jpg')", height: '400px' }}
             >
                 <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
                     <div className='d-flex justify-content-center align-items-center h-100'>

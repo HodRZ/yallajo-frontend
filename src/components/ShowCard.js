@@ -15,7 +15,7 @@ export class ShowCard extends Component {
 	render() {
 		return (
 			<MDBCard>
-				 <MDBCardImage src=/*{this.props.data.image}*/"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDfF-fiDUwo6VaDg9vMBGKQRmAFUg-4hDOtg&usqp=CAU" position='top' alt="rental car" /> 
+				<MDBCardImage src=/*{this.props.data.image}*/"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDfF-fiDUwo6VaDg9vMBGKQRmAFUg-4hDOtg&usqp=CAU" position='top' alt="rental car" />
 				{/* <MDBCardBody>
 					<MDBCardTitle>{this.props.data.title}</MDBCardTitle>
 					<MDBCardText>{this.props.data.description}</MDBCardText>

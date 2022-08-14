@@ -5,7 +5,7 @@ import DisplayedInfo from './DisplayedInfo';
 import Unsplashimg from './Unsplashimg';
 import { Component } from 'react';
 import axios from 'axios';
-import Header from '../../loggedOut/Header';
+// import Header from '../../loggedOut/Header';
 import LogoutButton from '../../../user/LogoutButton';
 import { MDBCol, MDBContainer, MDBRow } from 'mdb-react-ui-kit';
 import Profile from './../../../user/Profile';
@@ -56,10 +56,9 @@ class Citycomponent extends Component {
 	render() {
 		return (
 			<>
-				<Header />
 				<div
 					className='p-5 text-center bg-image d-flex align-items-center'
-					style={{ backgroundColor: 'orange', height: '400px' }}
+					style={{ backgroundColor: 'orange', height: 'auto' }}
 				>
 					<MDBContainer >
 						<MDBRow>
@@ -73,15 +72,25 @@ class Citycomponent extends Component {
 								<LogoutButton />
 							</MDBCol>
 						</MDBRow>
-					</MDBContainer>
-					{this.state.showData &&
-						<>
-							<DisplayedInfo name={this.state.cityName} />
-							<Map className='pic' source={this.state.imgSrc} />
-							<Unsplashimg className='img' sourceimg={this.state.imgSrcUns} />
-						</>}
-					{this.state.showWeather && <Weather weatherData={this.state.weather} />}
 
+						{this.state.showData &&
+							<>
+								<MDBRow>
+									<DisplayedInfo name={this.state.cityName} />
+								</MDBRow>
+								<MDBRow>
+									<MDBCol md='6'>
+										<Map source={this.state.imgSrc} />
+									</MDBCol>
+									<MDBCol md='2'>
+										<Weather weatherData={this.state.weather} />
+									</MDBCol>
+									<MDBCol md='4'>
+										<Unsplashimg sourceimg={this.state.imgSrcUns} />
+									</MDBCol>
+								</MDBRow>
+							</>}
+					</MDBContainer>
 					{this.state.showErr && <p>Enter valid Value Please</p>}
 				</div>
 			</>

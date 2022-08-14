@@ -3,18 +3,18 @@ import {
 	MDBRow,
 	MDBCol,
 	MDBInput,
-	 MDBCheckbox,
+	MDBCheckbox,
 	MDBBtn
 } from 'mdb-react-ui-kit';
 import axios from 'axios';
 
 
 
-export class Services extends Component {
+export class CreateServices extends Component {
 
 
 
-	handleSubmit = async(e) => {
+	handleSubmit = async (e) => {
 		e.preventDefault();
 		const title = e.target.title.value;
 		const type = e.target.type1.value;
@@ -23,14 +23,16 @@ export class Services extends Component {
 		const imageUrl = e.target.imageUrl.value;
 
 		const data = {
-			title: title,
-			type: type,
-			price: price,
-			description: description,
-			imageUrl: imageUrl
+			'newService': {
+				'title': title,
+				'type': type,
+				'price': price,
+				'description': description,
+				'imageUrl': imageUrl
+			}
 		}
 		console.log(data);
-		 await	axios.post('http://localhost3001/services/', data).catch(function (error){console.log(error)})
+		await axios.post('http://localhost:3001/service', data).catch(function (error) { console.log(error) })
 	}
 	render() {
 
@@ -39,13 +41,13 @@ export class Services extends Component {
 				<MDBRow className='mb-4'>
 
 					<MDBCol size='auto'>
-						
-						 							
-							<MDBCheckbox id='type1' label='carRental'  />
-						</MDBCol><MDBCol size='auto'>
-							<MDBCheckbox id='type2' label=' roomRental'  />
-						</MDBCol><MDBCol size='auto'>
-							<MDBCheckbox id='type3' label='tourGuide'  value='tourGuide' /> 
+
+
+						<MDBCheckbox id='type1' label='carRental' />
+					</MDBCol><MDBCol size='auto'>
+						<MDBCheckbox id='type2' label=' roomRental' />
+					</MDBCol><MDBCol size='auto'>
+						<MDBCheckbox id='type3' label='tourGuide' value='tourGuide' />
 
 					</MDBCol>
 					<MDBCol>
@@ -71,4 +73,4 @@ export class Services extends Component {
 }
 
 
-export default Services;
+export default CreateServices;
