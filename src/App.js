@@ -1,19 +1,14 @@
 import './App.css';
 import React from 'react'
+import Services from './components/Services';
 // import axios from 'axios';
-import Blogs from './components/Blogs'
 import Citycomponent from './components/Citycomponent';
-import BlogPost from './component/BlogPost'
-
-
 
 
 function App() {
   return (
     <>
-      <Blogs />
-      <Citycomponent />
-      <BlogPost />
+    <Citycomponent />
     </>
   );
 }
