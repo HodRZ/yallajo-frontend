@@ -8,9 +8,13 @@ import axios from 'axios';
 // import Header from '../../loggedOut/Header';
 import LogoutButton from '../../../user/LogoutButton';
 import { MDBCol, MDBContainer, MDBRow } from 'mdb-react-ui-kit';
-import Profile from './../../../user/Profile';
+// import Profile from './../../../user/Profile';
 import UseServices from '../../../UseServices';
-// import UserProfile from '../../../User/UserProfile';
+import Header from '../../Header';
+import { Route, Routes } from 'react-router-dom';
+import UserProfile from '../../../User/UserProfile';
+import AboutUS from '../../About';
+import Blogs from './../../../Blogs'
 
 
 
@@ -58,6 +62,14 @@ class Citycomponent extends Component {
 	render() {
 		return (
 			<>
+				<Routes>
+					<Route path='/' element={<Header />} >
+						<Route path='profile' element={<UserProfile />} />
+						<Route path='about' element={<AboutUS />} />
+						<Route path='blog' element={<Blogs />} />
+					</Route>
+
+				</Routes>
 				<div
 					className='p-5 text-center bg-image d-flex align-items-center'
 					style={{ backgroundColor: 'orange', height: 'auto', minHeight: '25rem' }}
@@ -67,9 +79,9 @@ class Citycomponent extends Component {
 							<MDBCol md='7'>
 								<SearchForm display={this.displayLocation} />
 							</MDBCol>
-							<MDBCol md='3'>
+							{/* <MDBCol md='3'>
 								<Profile />
-							</MDBCol>
+							</MDBCol> */}
 							<MDBCol md='2'>
 								<LogoutButton />
 							</MDBCol>
