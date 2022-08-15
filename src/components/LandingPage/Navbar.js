@@ -3,14 +3,15 @@ import {
   MDBNavbar,
   MDBNavbarNav,
   MDBNavbarItem,
-  MDBNavbarLink,
+  // MDBNavbarLink,
   MDBNavbarToggler,
   MDBContainer,
   MDBIcon,
-  MDBCollapse
+  MDBCollapse,
+  MDBBtn
 } from 'mdb-react-ui-kit';
 import AuthButtons from '../user/AuthButtons';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function App() {
   const [showBasic, setShowBasic] = useState(false);
@@ -29,16 +30,13 @@ export default function App() {
           <MDBCollapse show='true'>
             <MDBNavbarNav right className='mb-2 mb-lg-0'>
               <MDBNavbarItem active>
-                <MDBNavbarLink aria-current='page' href='/'>
-                  Home
-                </MDBNavbarLink>
+                <MDBBtn color='dark'><Link to='/' style={{ textDecoration: "none", color: 'dark' }}>Home</Link></MDBBtn>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                {/* <Link to='profile'>Blogs</Link> */}
-                <MDBNavbarLink href='/blogs'>Blogs</MDBNavbarLink>
+                <MDBBtn color='dark'><Link to='profile' style={{ textDecoration: "none", color: 'dark' }}>Profile</Link></MDBBtn>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink href='/profile'>Profile</MDBNavbarLink>
+                <MDBBtn color='dark'><Link to='blog' style={{ textDecoration: "none", color: 'dark' }}>Blogs</Link></MDBBtn>
               </MDBNavbarItem>
               <MDBNavbarItem>
                 <AuthButtons />
