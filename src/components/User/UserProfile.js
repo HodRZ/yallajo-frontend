@@ -9,17 +9,20 @@ import {
   MDBBtn,
   MDBRipple,
 } from "mdb-react-ui-kit";
+import { withAuth0 } from '@auth0/auth0-react';
+
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       profileData: {},
+      user: this.props.auth0.user
     };
   }
 
   getData = async () => {
     const responseData = await axios
-      .get(`${(process.env.REACT_APP_PORT && "http://localhost:3001") ? process.env.REACT_APP_PORT : "http://localhost:3001"}/user/`) //params to be extracted and added here
+      .get(`${(process.env.REACT_APP_PORT && "http://localhost:3001") ? process.env.REACT_APP_PORT : "http://localhost:3001"}/user?email=${this.state.user.email}`) //params to be extracted and added here
       .catch(function (err) {
         console.log(err);
       });
@@ -31,6 +34,7 @@ class UserProfile extends React.Component {
     this.getData();
   }
   render() {
+    console.log(this.state.user)
     return (
       <>
         {this.state.profileData &&
@@ -65,4 +69,4 @@ class UserProfile extends React.Component {
     );
   }
 }
-export default UserProfile;
+export default withAuth0(UserProfile);

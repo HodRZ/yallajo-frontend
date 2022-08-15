@@ -9,6 +9,8 @@ import axios from 'axios';
 import LogoutButton from '../../../user/LogoutButton';
 import { MDBCol, MDBContainer, MDBRow } from 'mdb-react-ui-kit';
 import Profile from './../../../user/Profile';
+import UseServices from '../../../UseServices';
+// import UserProfile from '../../../User/UserProfile';
 
 
 
@@ -58,7 +60,7 @@ class Citycomponent extends Component {
 			<>
 				<div
 					className='p-5 text-center bg-image d-flex align-items-center'
-					style={{ backgroundColor: 'orange', height: 'auto' }}
+					style={{ backgroundColor: 'orange', height: 'auto', minHeight: '25rem' }}
 				>
 					<MDBContainer >
 						<MDBRow>
@@ -88,6 +90,9 @@ class Citycomponent extends Component {
 									<MDBCol md='4'>
 										<Unsplashimg sourceimg={this.state.imgSrcUns} />
 									</MDBCol>
+								</MDBRow>
+								<MDBRow>
+									<UseServices />
 								</MDBRow>
 							</>}
 					</MDBContainer>

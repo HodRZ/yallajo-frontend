@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import LandingPage from "./components/LandingPage/LandingPage";
-// import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+
 // import axios from 'axios';
 // import Blogs from './components/Blogs'
 // import Citycomponent from './components/LandingPage/LoggedIN/mainComponents/Citycomponent';
@@ -16,12 +16,10 @@ import LandingPage from "./components/LandingPage/LandingPage";
 
 
 function App() {
-  // const { isAuthenticated } = useAuth0()
+
   return (
     <>
-
       <LandingPage />
-
     </>
   );
 }

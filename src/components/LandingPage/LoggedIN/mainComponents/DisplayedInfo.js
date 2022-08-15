@@ -8,7 +8,7 @@ class DisplayedInfo extends React.Component {
     return (
       <div>
         <hr></hr>
-        <p>City name : {this.props.name}</p>
+        <p>Welcome to {this.props.name.toUpperCase()} !</p>
         <hr></hr>
       </div>
     )
