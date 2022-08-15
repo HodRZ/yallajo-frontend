@@ -20,7 +20,7 @@ class CarRental extends Component {
     }
     handleGetCarService = async () => {
 
-        const Data = await axios.get('http://localhost:3001/service?type=tourGuide').catch(function (error) { console.log(error) });
+        const Data = await axios.get('http://localhost:3001/service?searchQuery=tourGuide').catch(function (error) { console.log(error) });
         this.setState({
             guideData: Data.data
         })
