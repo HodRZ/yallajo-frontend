@@ -18,7 +18,7 @@ class Blogs extends Component {
         }
     }
     getData = async () => {
-        const blogData = await axios.get(`http://localhost:3001/blog`).catch(function (err) { console.log(err) })
+        const blogData = await axios.get(`${process.env.REACT_APP_PORT}/blog`).catch(function (err) { console.log(err) })
         this.setState({
             blogData: blogData.data
         })

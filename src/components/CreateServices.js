@@ -32,7 +32,7 @@ export class CreateServices extends Component {
 			}
 		}
 		console.log(data);
-		await axios.post('http://localhost:3001/service', data).catch(function (error) { console.log(error) })
+		await axios.post(`${process.env.REACT_APP_PORT}/service`, data).catch(function (error) { console.log(error) })
 	}
 	render() {
 

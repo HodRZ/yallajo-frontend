@@ -35,7 +35,7 @@ class Citycomponent extends Component {
 	displayLocation = async (event) => {
 		event.preventDefault();
 		const userInput = event.target.form1.value;
-		const requestUrl = `http://localhost:3001/city?searchQuery=${userInput}`;
+		const requestUrl = `${process.env.REACT_APP_PORT}/city?searchQuery=${userInput}`;
 		const serverData = await axios.get(requestUrl);
 		this.setState({
 

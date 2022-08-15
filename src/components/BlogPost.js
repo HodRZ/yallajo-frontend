@@ -20,7 +20,7 @@ class BlogPost extends Component {
             }
         };
 
-        axios.post('http://localhost:3001/article', data).catch(function (error) { console.log(error) })
+        axios.post(`${process.env.REACT_APP_PORT}/blog`, data).catch(function (error) { console.log(error) })
 
 
     }
