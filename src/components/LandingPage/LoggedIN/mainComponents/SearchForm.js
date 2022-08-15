@@ -22,12 +22,12 @@ class SearchForm extends React.Component {
       <>
 
         <MDBRow onSubmit={this.handelSubmit} tag='form' className='gy-2 gx-3 align-items-center'>
-          <MDBCol size='auto'>
+          <MDBCol >
             <MDBInput id='form1' label='Enter city name' />
           </MDBCol>
 
           <MDBCol size='auto'>
-            <MDBBtn type='submit'>Searh</MDBBtn>
+            <MDBBtn type='submit' color='dark'>Searh</MDBBtn>
           </MDBCol>
         </MDBRow>
       </>

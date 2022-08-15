@@ -10,6 +10,7 @@ import {
   MDBRipple,
 } from "mdb-react-ui-kit";
 import { withAuth0 } from '@auth0/auth0-react';
+import Header from "../LandingPage/Header";
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class UserProfile extends React.Component {
     console.log(this.state.user)
     return (
       <>
+        <Header />
         {this.state.profileData &&
 
           <MDBCard>

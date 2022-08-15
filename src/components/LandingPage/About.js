@@ -9,11 +9,13 @@ import {
     MDBCardFooter,
     MDBCardGroup,
 } from "mdb-react-ui-kit";
+import Header from "./Header";
 
 class AboutUS extends React.Component {
     render() {
         return (
             <>
+                <Header />
                 <p
                     style={{
                         background: "#C0C0C0",
