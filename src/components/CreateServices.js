@@ -7,6 +7,7 @@ import {
 	MDBBtn
 } from 'mdb-react-ui-kit';
 import axios from 'axios';
+import Header from './LandingPage/Header';
 
 
 
@@ -28,7 +29,8 @@ export class CreateServices extends Component {
 				'type': type,
 				'price': price,
 				'description': description,
-				'imageUrl': imageUrl
+				'imageUrl': imageUrl,
+				'isAvailable': true
 			}
 		}
 		console.log(data);
@@ -37,35 +39,37 @@ export class CreateServices extends Component {
 	render() {
 
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<MDBRow className='mb-4'>
+			<>
+				<Header />
+				<form onSubmit={this.handleSubmit}>
+					<MDBRow className='mb-4'>
 
-					<MDBCol size='auto'>
-
-
-						<MDBCheckbox id='type1' label='carRental' />
-					</MDBCol><MDBCol size='auto'>
-						<MDBCheckbox id='type2' label=' roomRental' />
-					</MDBCol><MDBCol size='auto'>
-						<MDBCheckbox id='type3' label='tourGuide' value='tourGuide' />
-
-					</MDBCol>
-					<MDBCol>
-						<MDBInput id='title' label='Title' />
-					</MDBCol>
-				</MDBRow>
-
-				<MDBInput wrapperClass='mb-4' textarea id='description' rows={4} label='Description' />
-				<MDBInput wrapperClass='mb-4' id='imageUrl' label='imageUrl' />
-				<MDBInput wrapperClass='mb-4' id='price' label='price ' />
+						<MDBCol size='auto'>
 
 
+							<MDBCheckbox id='type1' label='carRental' />
+						</MDBCol><MDBCol size='auto'>
+							<MDBCheckbox id='type2' label=' roomRental' />
+						</MDBCol><MDBCol size='auto'>
+							<MDBCheckbox id='type3' label='tourGuide' value='tourGuide' />
 
-				<MDBBtn className='mb-4' type='submit' block>
-					Submit
-				</MDBBtn>
-			</form>
+						</MDBCol>
+						<MDBCol>
+							<MDBInput id='title' label='Title' />
+						</MDBCol>
+					</MDBRow>
 
+					<MDBInput wrapperClass='mb-4' textarea id='description' rows={4} label='Description' />
+					<MDBInput wrapperClass='mb-4' id='imageUrl' label='imageUrl' />
+					<MDBInput wrapperClass='mb-4' id='price' label='price ' />
+
+
+
+					<MDBBtn className='mb-4' type='submit' block>
+						Submit
+					</MDBBtn>
+				</form>
+			</>
 
 
 		)
