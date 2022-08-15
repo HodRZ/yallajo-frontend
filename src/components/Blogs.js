@@ -8,6 +8,7 @@ import {
     MDBCardImage,
     MDBBtn
 } from 'mdb-react-ui-kit';
+import Header from './LandingPage/Header';
 
 
 class Blogs extends Component {
@@ -30,6 +31,7 @@ class Blogs extends Component {
     render() {
         return (
             <>
+                <Header />
                 {this.state.blogData &&
                     this.state.blogData.map((article) => {
                         return (

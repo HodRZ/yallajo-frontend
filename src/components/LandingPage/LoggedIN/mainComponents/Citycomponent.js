@@ -6,15 +6,15 @@ import Unsplashimg from './Unsplashimg';
 import { Component } from 'react';
 import axios from 'axios';
 // import Header from '../../loggedOut/Header';
-import LogoutButton from '../../../user/LogoutButton';
+// import LogoutButton from '../../../user/LogoutButton';
 import { MDBCol, MDBContainer, MDBRow } from 'mdb-react-ui-kit';
 // import Profile from './../../../user/Profile';
 import UseServices from '../../../UseServices';
 import Header from '../../Header';
-import { Route, Routes } from 'react-router-dom';
-import UserProfile from '../../../User/UserProfile';
-import AboutUS from '../../About';
-import Blogs from './../../../Blogs'
+// import { Route, Routes } from 'react-router-dom';
+// import UserProfile from '../../../User/UserProfile';
+// import AboutUS from '../../About';
+// import Blogs from './../../../Blogs'
 
 
 
@@ -62,29 +62,28 @@ class Citycomponent extends Component {
 	render() {
 		return (
 			<>
-				<Routes>
+				<Header />
+				{/* <Routes>
 					<Route path='/' element={<Header />} >
 						<Route path='profile' element={<UserProfile />} />
 						<Route path='about' element={<AboutUS />} />
 						<Route path='blog' element={<Blogs />} />
-					</Route>
+					</Route> 
 
-				</Routes>
+				</Routes>*/}
 				<div
 					className='p-5 text-center bg-image d-flex align-items-center'
 					style={{ backgroundColor: 'orange', height: 'auto', minHeight: '25rem' }}
 				>
 					<MDBContainer >
 						<MDBRow>
-							<MDBCol md='7'>
+							<MDBCol >
 								<SearchForm display={this.displayLocation} />
 							</MDBCol>
+
 							{/* <MDBCol md='3'>
-								<Profile />
-							</MDBCol> */}
-							<MDBCol md='2'>
 								<LogoutButton />
-							</MDBCol>
+							</MDBCol> */}
 						</MDBRow>
 
 						{this.state.showData &&

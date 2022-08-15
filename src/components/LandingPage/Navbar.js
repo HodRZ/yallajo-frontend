@@ -29,14 +29,17 @@ export default function App() {
           </MDBNavbarToggler>
           <MDBCollapse show='true'>
             <MDBNavbarNav right className='mb-2 mb-lg-0'>
-              <MDBNavbarItem active>
-                <MDBBtn color='dark'><Link to='/' style={{ textDecoration: "none", color: 'dark' }}>Home</Link></MDBBtn>
+              <MDBNavbarItem>
+                <MDBBtn color='dark'><Link to='/' style={{ textDecoration: "none", color: 'white' }}>Home</Link></MDBBtn>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBBtn color='dark'><Link to='profile' style={{ textDecoration: "none", color: 'dark' }}>Profile</Link></MDBBtn>
+                <MDBBtn color='dark'><Link to='/profile' style={{ textDecoration: "none", color: 'white' }}>Profile</Link></MDBBtn>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBBtn color='dark'><Link to='blog' style={{ textDecoration: "none", color: 'dark' }}>Blogs</Link></MDBBtn>
+                <MDBBtn color='dark'><Link to='/blog' style={{ textDecoration: "none", color: 'white' }}>Blogs</Link></MDBBtn>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBBtn color='dark'><Link to='/about' style={{ textDecoration: "none", color: 'white' }}>About Us</Link></MDBBtn>
               </MDBNavbarItem>
               <MDBNavbarItem>
                 <AuthButtons />

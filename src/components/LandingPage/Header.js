@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 // import {
 //     MDBNavbar,
 //     MDBNavbarNav,
@@ -35,7 +35,7 @@ export default function Header() {
                     </div>
                 </div>
             </header>
-            <Outlet />
+            {/* <Outlet /> */}
         </>
     );
 }
