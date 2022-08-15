@@ -16,6 +16,8 @@ import RoomRental from './LoggedIN/mainComponents/Services/RoomRental'
 import About from './About'
 // import Profile from '../user/Profile';
 import UserProfile from '../User/UserProfile';
+import BlogPost from '../BlogPost';
+import CreateServices from '../CreateServices';
 // import Profile from '../user/Profile';
 class LandingPage extends Component {
     render() {
@@ -25,6 +27,9 @@ class LandingPage extends Component {
 
                 <Routes>
                     <Route path='profile' element={<UserProfile />} />
+                    <Route path='profile/blog' element={<BlogPost />} />
+                    <Route path='profile/service' element={<CreateServices />} />
+
                     <Route path='about' element={<About />} />
                     <Route path='blog' element={<Blogs />} />
                     {
