@@ -73,17 +73,13 @@ class Citycomponent extends Component {
 				</Routes>*/}
 				<div
 					className='p-5 text-center bg-image d-flex align-items-center'
-					style={{ backgroundColor: 'orange', height: 'auto', minHeight: '25rem' }}
+					style={{ height: 'auto', minHeight: '25rem' }}
 				>
 					<MDBContainer >
 						<MDBRow>
 							<MDBCol >
 								<SearchForm display={this.displayLocation} />
 							</MDBCol>
-
-							{/* <MDBCol md='3'>
-								<LogoutButton />
-							</MDBCol> */}
 						</MDBRow>
 
 						{this.state.showData &&

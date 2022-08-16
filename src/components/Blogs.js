@@ -1,13 +1,6 @@
+import "./Blogs.css";
 import React, { Component } from 'react';
 import axios from 'axios';
-import {
-    MDBCard,
-    MDBCardBody,
-    MDBCardTitle,
-    MDBCardText,
-    MDBCardImage,
-    MDBBtn
-} from 'mdb-react-ui-kit';
 import Header from './LandingPage/Header';
 import { Link } from 'react-router-dom';
 
@@ -33,23 +26,43 @@ class Blogs extends Component {
         return (
             <>
                 <Header />
-                {this.state.blogData &&
-                    this.state.blogData.map((article) => {
-                        return (
-                            <MDBCard>
-                                <MDBCardImage src={article.image} position='top' alt={article.keyword} />
-                                <MDBCardBody>
-                                    <MDBCardTitle>{article.title}</MDBCardTitle>
-                                    <MDBCardText>
-                                        {article.content}
-                                    </MDBCardText>
-                                    <Link to={`/blog/${article._id}`} style={{ textDecoration: "none", color: 'white' }}><MDBBtn color='dark' style={{ marginLeft: "50px" }}>Edit</MDBBtn></Link>
-                                </MDBCardBody>
-                            </MDBCard>
-                        )
-                    })
-
-                }
+                <section className="cards-primary">
+                    <div className="cards-header">
+                        <h1>
+                            Blog
+                        </h1>
+                        <p>
+                            Blogs that are loved by the community. Updated every hour.
+                        </p>
+                    </div>
+                    <div className="card-container">
+                        {
+                            this.state.blogData.map((items, key) => (
+                                <article className="card" key={key}>
+                                    {/* <a href={items.href} className="card-details"> */}
+                                    <Link to={`/blog/${items._id}`} className="card-details">
+                                        <img src={items.image} loading="lazy" alt={items.title} className="w-full h-48 rounded-tl-md rounded-tr-md" />
+                                        <div className="card-header">
+                                            <div className="avatar">
+                                                <img src={items.image} alt={items.title} />
+                                            </div>
+                                            <div className="info">
+                                                <span className="author-name">{items.title}</span>
+                                                <span className="date">{items.date}</span>
+                                            </div>
+                                        </div>
+                                        <div className="card-footer">
+                                            <h3>
+                                                {items.title}
+                                            </h3>
+                                            <p>{items.content}</p>
+                                        </div>
+                                    </Link>
+                                </article>
+                            ))
+                        }
+                    </div>
+                </section>
             </>
         )
 
@@ -57,6 +70,3 @@ class Blogs extends Component {
 }
 
 export default Blogs;
-
-// create by Ahmed Awamleh
-// branch "FORM"

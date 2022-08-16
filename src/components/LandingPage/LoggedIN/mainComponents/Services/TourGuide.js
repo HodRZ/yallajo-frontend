@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import {
-    MDBCard,
-    MDBCardImage,
-    MDBCardBody,
-    MDBCardTitle,
-    MDBCardText,
-    MDBRow,
-    MDBCol,
-    MDBBtn
-} from 'mdb-react-ui-kit';
+import './RentalCard.css'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -30,35 +21,46 @@ class CarRental extends Component {
         this.handleGetCarService()
     }
     render() {
-        console.log(this.state)
+
         return (
             <>
-
-                {this.state.guideData &&
-                    <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
-
-                        {this.state.guideData.map((car) => {
-                            return < MDBCol >
-                                <MDBCard className='h-100'>
-                                    <MDBCardImage
-                                        src={car.image}
-                                        alt='...'
-                                        position='top'
-                                        fluid
-                                    />
-                                    <MDBCardBody>
-                                        <MDBCardTitle>{car.title}</MDBCardTitle>
-                                        <MDBCardText>
-                                            This is a longer card with supporting text below as a natural lead-in to additional content.
-                                            This content is a little bit longer.
-                                        </MDBCardText>
-                                        <Link to={`/tourGuide/${car._id}`} style={{ textDecoration: "none", color: 'white' }}><MDBBtn color='dark' style={{ marginLeft: "50px" }}>Edit</MDBBtn></Link>
-                                    </MDBCardBody>
-                                </MDBCard>
-                            </MDBCol>
-                        })}
-                    </MDBRow>
-                }
+                <section className="cards-primary">
+                    <div className="cards-header">
+                        <h1>
+                            Find A Place To Stay
+                        </h1>
+                        <p>
+                            best places in town
+                        </p>
+                    </div>
+                    <div className="card-container">
+                        {this.state.guideData &&
+                            this.state.guideData.map((items, key) => (
+                                <article className="card" key={key}>
+                                    {/* <a href={items.href} className="card-details"> */}
+                                    <Link to={`/service/${items._id}`} className="card-details">
+                                        <img src={items.image} loading="lazy" alt={items.title} className="w-full h-48 rounded-tl-md rounded-tr-md" />
+                                        <div className="card-header">
+                                            <div className="avatar">
+                                                <img src={items.image} alt={items.title} />
+                                            </div>
+                                            <div className="info">
+                                                <span className="author-name">{items.title}</span>
+                                                <span className="date">{items.price}</span>
+                                            </div>
+                                        </div>
+                                        <div className="card-footer">
+                                            <h3>
+                                                {items.title}
+                                            </h3>
+                                            <p>{items.description}</p>
+                                        </div>
+                                    </Link>
+                                </article>
+                            ))
+                        }
+                    </div>
+                </section>
             </>
         );
     }
