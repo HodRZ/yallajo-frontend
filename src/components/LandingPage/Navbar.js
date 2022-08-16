@@ -10,7 +10,7 @@ import {
   MDBCollapse,
   MDBBtn
 } from 'mdb-react-ui-kit';
-import AuthButtons from '../user/AuthButtons';
+import AuthButtons from '../User/AuthButtons';
 import { Link } from 'react-router-dom';
 
 export default function App() {

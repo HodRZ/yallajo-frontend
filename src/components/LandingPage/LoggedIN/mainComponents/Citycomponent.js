@@ -5,16 +5,11 @@ import DisplayedInfo from './DisplayedInfo';
 import Unsplashimg from './Unsplashimg';
 import { Component } from 'react';
 import axios from 'axios';
-// import Header from '../../loggedOut/Header';
-// import LogoutButton from '../../../user/LogoutButton';
 import { MDBCol, MDBContainer, MDBRow } from 'mdb-react-ui-kit';
-// import Profile from './../../../user/Profile';
 import UseServices from '../../../UseServices';
 import Header from '../../Header';
-// import { Route, Routes } from 'react-router-dom';
-// import UserProfile from '../../../User/UserProfile';
-// import AboutUS from '../../About';
-// import Blogs from './../../../Blogs'
+import { withAuth0 } from '@auth0/auth0-react';
+
 
 
 
@@ -54,23 +49,24 @@ class Citycomponent extends Component {
 			showWeather: true,
 
 		})
-		// console.log("hi jordan");
-		// console.log(userInput);
-
 	}
+	createUser = async () => {
+		const newUser = {
+			name: this.props.auth0.user.name,
+			email: this.props.auth0.user.email,
+			image: this.props.auth0.user.picture
+		}
 
+		const found = await axios.post(`${process.env.REACT_APP_PORT}/user`, newUser).catch(function (error) { console.log(error) })
+		console.log(found)
+	}
+	componentDidMount() {
+		this.createUser()
+	}
 	render() {
 		return (
 			<>
 				<Header />
-				{/* <Routes>
-					<Route path='/' element={<Header />} >
-						<Route path='profile' element={<UserProfile />} />
-						<Route path='about' element={<AboutUS />} />
-						<Route path='blog' element={<Blogs />} />
-					</Route> 
-
-				</Routes>*/}
 				<div
 					className='p-5 text-center bg-image d-flex align-items-center'
 					style={{ height: 'auto', minHeight: '25rem' }}
@@ -109,6 +105,4 @@ class Citycomponent extends Component {
 
 		)
 	}
-} export default Citycomponent;
-
-// Made by ruba
+} export default withAuth0(Citycomponent);

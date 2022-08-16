@@ -14,13 +14,12 @@ import TourGuide from './LoggedIN/mainComponents/Services/TourGuide'
 import RoomRental from './LoggedIN/mainComponents/Services/RoomRental'
 
 import About from './About'
-// import Profile from '../user/Profile';
 import UserProfile from '../User/UserProfile';
 import BlogPost from '../BlogPost';
 import CreateServices from '../CreateServices';
 import EditBlog from '../User/editBlog';
 import EditService from '../User/editService';
-// import Profile from '../user/Profile';
+
 class LandingPage extends Component {
     render() {
         const { isAuthenticated } = this.props.auth0;
