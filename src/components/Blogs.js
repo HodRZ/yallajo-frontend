@@ -9,6 +9,7 @@ import {
     MDBBtn
 } from 'mdb-react-ui-kit';
 import Header from './LandingPage/Header';
+import { Link } from 'react-router-dom';
 
 
 class Blogs extends Component {
@@ -42,7 +43,7 @@ class Blogs extends Component {
                                     <MDBCardText>
                                         {article.content}
                                     </MDBCardText>
-                                    <MDBBtn href='#'>Button</MDBBtn>
+                                    <Link to={`/blog/${article._id}`} style={{ textDecoration: "none", color: 'white' }}><MDBBtn color='dark' style={{ marginLeft: "50px" }}>Edit</MDBBtn></Link>
                                 </MDBCardBody>
                             </MDBCard>
                         )
