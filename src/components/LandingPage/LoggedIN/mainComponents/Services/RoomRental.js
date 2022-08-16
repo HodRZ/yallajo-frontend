@@ -10,6 +10,7 @@ import {
     MDBBtn
 } from 'mdb-react-ui-kit';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class CarRental extends Component {
     constructor(props) {
@@ -51,7 +52,7 @@ class CarRental extends Component {
                                             This is a longer card with supporting text below as a natural lead-in to additional content.
                                             This content is a little bit longer.
                                         </MDBCardText>
-                                        <MDBBtn href='#'>Go somewhere</MDBBtn>
+                                        <Link to={`/roomRental/${car._id}`} style={{ textDecoration: "none", color: 'white' }}><MDBBtn color='dark' style={{ marginLeft: "50px" }}>Edit</MDBBtn></Link>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
